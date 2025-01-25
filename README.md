@@ -7,16 +7,17 @@ The Task Manager application is a full-featured ReactJS-based project designed t
   3. Mark tasks as completed (with strikethrough styling).
   4. Toggle important tasks using a star icon.
   5. Delete tasks.
-  6. Filtering:
-  7. Filter tasks by "All Tasks," "Today," or "Important" using the sidebar.
-  8. Dark/Light Mode:
-  9. Toggle between dark and light themes for the entire application.
-  10. Right Sidebar:
-  11. Access additional features like:
-  12. Adding steps.
-  13. Setting reminders.
-  14. Adding due dates.
-  15. Repeating tasks.
+  6. Filtering
+  7. Weather API Integration
+  8. Filter tasks by "All Tasks," "Today," or "Important" using the sidebar.
+  9. Dark/Light Mode:
+  10. Toggle between dark and light themes for the entire application.
+  11. Right Sidebar:
+  12. Access additional features like:
+  13. Adding steps.
+  14. Setting reminders.
+  15. Adding due dates.
+  16. Repeating tasks.
 
 *Statistics*
 View task completion status via a pie chart.
@@ -61,6 +62,7 @@ TaskListView.jsx: Lists tasks in a table format, showing details like priority, 
 NavbarRightSidebar.jsx: A right sidebar for adding steps, reminders, due dates, and repeating tasks.
 Sidebar.jsx: A left sidebar for filtering tasks (e.g., "Today," "Important").
 TaskManager.jsx: The main container managing the task state, filters, and layout.
+WeatherComponent.jsx: Accepts dynamic input from user(i.e location) and displays the weather out there and gives suggestion
 
 *Usage GuideAdding Tasks:*
   Fill in the task title, description, priority, and due date.
