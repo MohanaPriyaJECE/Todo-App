@@ -20,6 +20,7 @@ import BookIcon from '@mui/icons-material/Book';
 import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
+import WeatherComponent from './WeatherComponent';
 
 const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
   const completedTasks = tasks.filter((task) => task.completed).length;
