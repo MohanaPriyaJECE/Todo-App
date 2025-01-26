@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import {
   Box,
@@ -34,14 +31,15 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
   return (
     <Box
       sx={{
-        height: '78%',
-        marginY:'60px',
+        height: '90%',
+        marginY: '60px',
         backgroundColor: darkMode ? '#424242' : '#E8E8E8',
         padding: 2,
         borderRadius: '0 12px 12px 0',
         position: 'relative',
       }}
     >
+      
       <Box
         sx={{
           position: 'absolute',
@@ -60,6 +58,8 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
         <Typography variant="h6">Priya</Typography>
       </Box>
       <Divider sx={{ my: 2 }} />
+
+      {/* Task Filters */}
       <List>
         <ListItem button onClick={() => setFilter('all')}>
           <ListItemIcon>
@@ -93,6 +93,8 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
         </ListItem>
       </List>
       <Divider sx={{ my: 2 }} />
+
+      {/* Add List Button */}
       <Button
         variant="outlined"
         fullWidth
@@ -102,16 +104,14 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
         Add List
       </Button>
       <Divider sx={{ my: 2 }} />
+
+      {/* Task Stats */}
       <Typography variant="h6" align="center">
         Task Stats
       </Typography>
       <Box textAlign="center" mt={2}>
-        <Typography variant="body2">
-          Total Tasks: {tasks.length}
-        </Typography>
-        <Typography variant="body2">
-          Completed: {completedTasks}
-        </Typography>
+        <Typography variant="body2">Total Tasks: {tasks.length}</Typography>
+        <Typography variant="body2">Completed: {completedTasks}</Typography>
       </Box>
       <PieChart width={200} height={200}>
         <Pie
@@ -128,7 +128,7 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
         </Pie>
         <Tooltip />
       </PieChart>
-       <Divider sx={{ my: 2 }} />
+      <Divider sx={{ my: 2 }} />
       <WeatherComponent />
     </Box>
   );
