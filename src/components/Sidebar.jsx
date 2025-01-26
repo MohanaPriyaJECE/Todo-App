@@ -31,7 +31,8 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
   return (
     <Box
       sx={{
-        height: '90%',
+        height: { xs: 'auto', sm: '90%' }, 
+        width:'250px',
         marginY: '60px',
         backgroundColor: darkMode ? '#424242' : '#E8E8E8',
         padding: 2,
@@ -60,7 +61,7 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
       <Divider sx={{ my: 2 }} />
 
       {/* Task Filters */}
-      <List>
+      <List sx={{ marginTop: 2, padding: 3, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
         <ListItem button onClick={() => setFilter('all')}>
           <ListItemIcon>
             <InsertDriveFileIcon />
@@ -106,6 +107,7 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
       <Divider sx={{ my: 2 }} />
 
       {/* Task Stats */}
+      <Box sx={{ marginTop: 2, marginBottom:2,padding: 3, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
       <Typography variant="h6" align="center">
         Task Stats
       </Typography>
