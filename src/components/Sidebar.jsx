@@ -33,14 +33,15 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
       sx={{
         height: { xs: 'auto', sm: '90%' }, 
         width:'250px',
+        //overflowY: { xs: 'visible', sm: 'auto' },
         marginY: '60px',
         backgroundColor: darkMode ? '#424242' : '#E8E8E8',
-        padding: 2,
+        padding: 1,
         borderRadius: '0 12px 12px 0',
         position: 'relative',
       }}
     >
-      
+      {/* Profile Section */}
       <Box
         sx={{
           position: 'absolute',
@@ -61,6 +62,7 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
       <Divider sx={{ my: 2 }} />
 
       {/* Task Filters */}
+      <div className='box1'>
       <List sx={{ marginTop: 2, padding: 3, backgroundColor: '#f5f5f5', borderRadius: 2 }}>
         <ListItem button onClick={() => setFilter('all')}>
           <ListItemIcon>
@@ -93,6 +95,7 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
           <ListItemText primary="Assigned to Me" />
         </ListItem>
       </List>
+      </div>
       <Divider sx={{ my: 2 }} />
 
       {/* Add List Button */}
@@ -115,13 +118,13 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
         <Typography variant="body2">Total Tasks: {tasks.length}</Typography>
         <Typography variant="body2">Completed: {completedTasks}</Typography>
       </Box>
-      <PieChart width={200} height={200}>
+      <PieChart width={200} height={160}>
         <Pie
           data={pieData}
           dataKey="value"
           nameKey="name"
-          cx="65%"
-          cy="35%"
+          cx="auto"
+          cy="auto"
           outerRadius={70}
         >
           {pieData.map((entry, index) => (
@@ -130,12 +133,16 @@ const Sidebar = ({ tasks, darkMode, onAddListClick, setFilter }) => {
         </Pie>
         <Tooltip />
       </PieChart>
+      </Box>
       <Divider sx={{ my: 2 }} />
+
+      {/* Weather Widget */}
       <WeatherComponent />
     </Box>
   );
 };
 
 export default Sidebar;
+
 
    
